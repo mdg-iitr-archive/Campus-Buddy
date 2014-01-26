@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<!-- 
+    <item
+        android:id="@+id/subject_name"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="See Subject Name"/>
+    
+ 
+ -->
+ <item
+        android:id="@+id/attend"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Attendance"/>
+    <item
+        android:id="@+id/notes1"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Notes"/>
+    <item
+        android:id="@+id/addSubject"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Add Subject"/>
+    
+    <item
+        android:id="@+id/resetTimeTable"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Reset Time Table"/>
+    
+   
+    
+    
+</menu>

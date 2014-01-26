@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:title="Reset TimeTable"
+        android:id="@+id/Refresh"/>
+    <item
+        android:title="Clear subject list"
+        android:id="@+id/clear_suball"/>
+    <item android:id="@+id/exit" android:title="Exit"></item>
+    
+
+</menu>

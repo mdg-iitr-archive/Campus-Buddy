@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#8291c6" >
+
+    <TextView
+       android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+        android:layout_margin="12px"
+        android:text="You set an alarm now wake up!"
+        android:textColor="#124112"
+        android:textColorHighlight="#323232"
+        android:textSize="35px" />
+
+</LinearLayout>

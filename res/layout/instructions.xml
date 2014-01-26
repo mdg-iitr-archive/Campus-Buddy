@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="20dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="CAMPUS WINDOW\n"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="1.Click on Campus App button to launch the application.\n\n2.Choose &apos;WONA Feeds&apos; Tab to see WONA Updates.\n\n3.Choose &apos;Telephone Directory&apos; Tab to browse Telephone Directory.\n\n4.Choose &apos;Map&apos; Tab to see IITR&apos;s Map.\n\n5.Click a place on Map for further details about that place.\n\n6.Tap on list displayed to Call or E-Mail.\n\n7.Press &apos;Menu&apos; button for more options like-Search Place." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="5dp"
+                android:text="TIME TABLE\n"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="1.Touch on a particular slot to-\n
+   \t-Add a new subject on that slot, and add that subject to your subject list by clicking OK.\n
+   \t-Select a subject in the subject list.\n\n2.Press Menu and select appropriate option-\n
+   \t-Clear Timetable, i.e. clear all slots.\n
+   \t-Delete subject list.\n
+   \t-Go back to main page." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="5dp"
+                android:text="CALENDAR"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="1.Touch on a date to see events on that day.\n\n
+2.Click on next and previous month arrows to change month." />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
