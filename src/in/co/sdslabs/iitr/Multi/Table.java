@@ -710,8 +710,8 @@ public class Table extends Activity implements OnItemSelectedListener {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		switch (item.getItemId()) {
-		case R.id.Refresh:
+		int id = item.getItemId();
+		if ( id == R.id.Refresh) {
 			DBAdapterPkr entrytt = new DBAdapterPkr(getApplicationContext());
 			try {
 				entrytt.open();
@@ -728,12 +728,12 @@ public class Table extends Activity implements OnItemSelectedListener {
 			Intent table = new Intent("in.co.sdslabs.iitr.Multi.TIMETABLE");
 			table.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 			startActivity(table);
-			break;
-		case R.id.exit:
+		}
+			else if ( id ==R.id.exit) {
 			finish();
 
-			break;
-		case R.id.clear_suball:
+			}
+			else if ( id == R.id.clear_suball) {
 			DatabaseCreator dbc = new DatabaseCreator(getApplicationContext());
 			try {
 				dbc.open();
@@ -747,10 +747,8 @@ public class Table extends Activity implements OnItemSelectedListener {
 				errordialog(e);
 			}
 
-			break;
-		default:
-			break;
-		}
+			}
+	
 		return false;
 	}
 }

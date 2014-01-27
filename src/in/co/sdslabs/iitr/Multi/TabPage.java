@@ -540,9 +540,7 @@ public class TabPage extends Activity implements OnTabChangeListener,
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
-		// TODO Auto-generated method stub
-		switch (arg0.getId()) {
-		case R.id.spinnerPlace:
+		if (arg0.getId() == R.id.spinnerPlace) {
 			String item = (String) spinnerTelDirectory1.getSelectedItem();
 			if ("Select".equalsIgnoreCase(item)) {
 				llSpinnerAdvanced.setVisibility(View.GONE);
@@ -554,15 +552,11 @@ public class TabPage extends Activity implements OnTabChangeListener,
 				// display data + set spinner advanced
 				setSpinner2(item);
 			}
-			break;
-
-		case R.id.spinnerMap:
+		} else if (arg0.getId() == R.id.spinnerMap) {
 			p = (String) spinnerMap.getSelectedItem();
 			id = -2;
 			onTabChanged(th.getCurrentTabTag());
-			break;
-
-		case R.id.spinnerAdvanced:
+		} else if (arg0.getId() == R.id.spinnerAdvanced) {
 			String item1 = (String) spinnerTelDirectory1.getSelectedItem();
 			String item2 = (String) spinnerTelDirectory2.getSelectedItem();
 			if ("All".equalsIgnoreCase(item2))
@@ -571,8 +565,6 @@ public class TabPage extends Activity implements OnTabChangeListener,
 				// display data
 				showTelData(item1, item2);
 			}
-
-			break;
 		}
 
 	}
@@ -585,43 +577,25 @@ public class TabPage extends Activity implements OnTabChangeListener,
 
 	@Override
 	public void onTabChanged(String tabId) {
-		// TODO Auto-generated method stub
-		switch (th.getCurrentTab()) {
-		case 0:// WONA Feeds
-
+		int currentTab = th.getCurrentTab();
+		if (currentTab == 0) {
 			id = -1;
-
 			llScrollWona.removeAllViews();
 			TextView tv = new TextView(this);
 			tv.setTextColor(Color.BLACK);
 			tv.setText("To be updated soon");
 			tv.setPadding(10, 10, 0, 0);
 			llScrollWona.addView(tv);
-			break;
-		case 1:// Tel Directory
-
+		} else if (currentTab == 1) {
 			id = -1;
 			// String item = (String) spinnerTelDirectory1.getSelectedItem();
-
-			// set next tel directory 2 spinner
-
-			// showTelData(item);
-			break;
-		case 2:// Map
-
+		} else if (currentTab == 2) {
 			ZoomState mZoomState = mMapControl.getZoomState();
 			mMapView.setZoomState(mZoomState);
 			mMapView.setImage(mBitmap);
 			mMapView.setOnTouchListener(this);
-
 			mMapControl.setAspectQuotient(mMapView.getAspectQuotient());
-
 			resetZoomState();
-
-			// get spinner selection
-			// String selection = (String)
-			// spinnerTelDirectory1.getSelectedItem();
-
 			// check id
 			PointF pan;
 			if (id != -1) {
@@ -663,26 +637,25 @@ public class TabPage extends Activity implements OnTabChangeListener,
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		super.onOptionsItemSelected(item);
-		switch (item.getItemId()) {
-		/*
-		 * case R.id.toggleMenu: if (showTodayOnly) showTodayOnly = false; else
-		 * showTodayOnly = true; onTabChanged(th.getCurrentTabTag()); break;
-		 */
+		if (item.getItemId() == R.id.search) {
+			
+			/*
+			 * case R.id.toggleMenu: if (showTodayOnly) showTodayOnly = false; else
+			 * showTodayOnly = true; onTabChanged(th.getCurrentTabTag()); break;
+			 */
 
-		/*
-		 * case R.id.syncData: // set downloader ShikharParser sdCardStatus =
-		 * new ShikharParser(); if (sdCardStatus.checkExternalMedia()) { dis =
-		 * new DownloadEventsXml(); dis.execute(); } else { Toast msg =
-		 * Toast.makeText(TabPage.this,
-		 * "Please insert a SDcard. Cannot update without it. ",
-		 * Toast.LENGTH_LONG); msg.show(); } break;
-		 */
-
-		case R.id.search:
+			/*
+			 * case R.id.syncData: // set downloader ShikharParser sdCardStatus =
+			 * new ShikharParser(); if (sdCardStatus.checkExternalMedia()) { dis =
+			 * new DownloadEventsXml(); dis.execute(); } else { Toast msg =
+			 * Toast.makeText(TabPage.this,
+			 * "Please insert a SDcard. Cannot update without it. ",
+			 * Toast.LENGTH_LONG); msg.show(); } break;
+			 */
+			
 			th.setCurrentTab(2);
 			if (!llSpinnerMap.isShown())
 				llSpinnerMap.setVisibility(View.VISIBLE);
-			break;
 		}
 
 		return false;
@@ -729,18 +702,14 @@ public class TabPage extends Activity implements OnTabChangeListener,
 		mVelocityTracker.addMovement(event);
 
 		if (!(panel.isVisible || panel_map.isVisible)) {
-			///---------handle touch event only when panel is invisible
-			switch (action) {
-			case MotionEvent.ACTION_DOWN:
+			if (action == MotionEvent.ACTION_DOWN) {
 				downTime = System.currentTimeMillis();
 				mMapControl.stopFling();
 				mDownX = x;
 				mDownY = y;
 				mX = x;
 				mY = y;
-				break;
-
-			case MotionEvent.ACTION_POINTER_DOWN:
+			} else if (action == MotionEvent.ACTION_POINTER_DOWN) {
 				oldDist = spacing(event);
 				if (event.getPointerCount() > 1) {
 					oldDist = spacing(event);
@@ -749,12 +718,9 @@ public class TabPage extends Activity implements OnTabChangeListener,
 						mMode = Mode.PINCHZOOM;
 					}
 				}
-				break;
-
-			case MotionEvent.ACTION_MOVE: {
+			} else if (action == MotionEvent.ACTION_MOVE) {
 				final float dx = (x - mX) / v.getWidth();
 				final float dy = (y - mY) / v.getHeight();
-
 				if (mMode == Mode.PAN) {
 					mMapControl.pan(-dx, -dy);
 				} else if (mMode == Mode.PINCHZOOM) {
@@ -777,27 +743,20 @@ public class TabPage extends Activity implements OnTabChangeListener,
 						mMode = Mode.PAN;
 					}
 				}
-
 				mX = x;
 				mY = y;
-				break;
-			}
-
-			case MotionEvent.ACTION_POINTER_UP:
+			} else if (action == MotionEvent.ACTION_POINTER_UP) {
 				if (event.getPointerCount() > 1 && mMode == Mode.PINCHZOOM) {
 					panAfterPinchTimeout = System.currentTimeMillis() + 100;
 				}
 				mMode = Mode.UNDEFINED;
-				break;
-
-			case MotionEvent.ACTION_UP:
+			} else if (action == MotionEvent.ACTION_UP) {
 				long upTime = System.currentTimeMillis();
 				if (upTime - downTime < tapTimeOut) {
 					isTap = true;
 				} else {
 					isTap = false;
 				}
-
 				// isTap
 				if (isTap == true) {
 					float touchX = mMapView.getBitmapLeft()
@@ -822,7 +781,6 @@ public class TabPage extends Activity implements OnTabChangeListener,
 						showInfoOfPlace(findPlaceFromDB((int) touchX,
 								(int) touchY));
 				}
-
 				if (mMode == Mode.PAN) {
 					final long now = System.currentTimeMillis();
 					if (panAfterPinchTimeout < now) {
@@ -840,7 +798,6 @@ public class TabPage extends Activity implements OnTabChangeListener,
 				}
 				mVelocityTracker.recycle();
 				mVelocityTracker = null;
-				break;
 			}
 		}
 

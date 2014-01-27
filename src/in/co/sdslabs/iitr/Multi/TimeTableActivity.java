@@ -217,38 +217,16 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 			}
 			Calendar calendar = Calendar.getInstance();
 			int day = calendar.get(Calendar.DAY_OF_WEEK);
-			switch (day) {
-
-			case 3: {
+			if (day == 3) {
 				mViewPager.setCurrentItem(1);
-
-				// th.setCurrentTab(1);
-				break;
-			}
-			case 4: {
+			} else if (day == 4) {
 				mViewPager.setCurrentItem(2);
-
-				// th.setCurrentTab(2);
-				break;
-			}
-			case 5: {
+			} else if (day == 5) {
 				mViewPager.setCurrentItem(3);
-
-				// th.setCurrentTab(3);
-				break;
-			}
-			case 6: {
+			} else if (day == 6) {
 				mViewPager.setCurrentItem(4);
-
-				// th.setCurrentTab(4);
-				break;
-			}
-			default: {
+			} else {
 				mViewPager.setCurrentItem(0);
-
-				// th.setCurrentTab(0);
-				break;
-			}
 			}
 		} else {
 			setContentView(R.layout.frag2);
@@ -390,23 +368,10 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO Auto-generated method stub
-		switch (item.getItemId()) {
-		/*
-		 * case R.id.feedback: { Intent intent = new
-		 * Intent("com.sds.timetablesds.MainActivity.FEED");
-		 * startActivity(intent);
-		 * 
-		 * break; }
-		 */case R.id.notes1: {
-			// Toast.makeText(this, "notes", Toast.LENGTH_LONG).show();
-
+		if (item.getItemId() == R.id.notes1) {
 			Intent intent1 = new Intent(this,Seenote.class);
 			startActivity(intent1);
-
-			break;
-		}
-		case R.id.resetTimeTable: {
+		} else if (item.getItemId() == R.id.resetTimeTable) {
 			Toast.makeText(this, "Now you can reset TimeTable",
 					Toast.LENGTH_LONG).show();
 			somedata = getSharedPreferences(filename, 0);
@@ -430,40 +395,18 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 			entry.drop();
-
 			entry.close();
-
 			Intent openStartingPoint = new Intent(this,Own.class);
 			startActivity(openStartingPoint);
 			finish();
-
-			break;
-		}
-		case R.id.attend: {
+		} else if (item.getItemId() == R.id.attend) {
 			Intent i2 = new Intent(this,Attendance.class);
 			startActivity(i2);
-			break;
-		}
-		case R.id.addSubject: {
+		} else if (item.getItemId() == R.id.addSubject) {
 			Intent i2 = new Intent(this,Own.class);
 			startActivity(i2);
-			break;
 		}
-		/*case R.id.subject_name: {
-			Intent i2 = new Intent("com.example.timet.SUBJECT_NAME");
-			startActivity(i2);
-			break;
-		}
-		*/
-		/*
-		 * case R.id.aboutUs: { Intent intent2 = new Intent(
-		 * "com.sds.timetablesds.MainActivity.ABOUT"); startActivity(intent2);
-		 * break; } case R.id.messweekend: { Intent intent3 = new Intent(
-		 * "com.sds.timetablesds.MainActivity.WEEKEND"); startActivity(intent3);
-		 * break; }
-		 */}
 		return false;
 	}
 
@@ -515,16 +458,15 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			switch (position) {
-			case 0:
+			if (position == 0) {
 				return getString(R.string.title_section1);
-			case 1:
+			} else if (position == 1) {
 				return getString(R.string.title_section2);
-			case 2:
+			} else if (position == 2) {
 				return getString(R.string.title_section3);
-			case 3:
+			} else if (position == 3) {
 				return getString(R.string.title_section4);
-			case 4:
+			} else if (position == 4) {
 				return getString(R.string.title_section5);
 			}
 			return null;
@@ -596,8 +538,7 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 			}
 			int k = note.number();
 			String temp = "";
-			switch (a) {
-			case 1: {
+			if (a == 1) {
 				int i1 = 1;
 				for (int i = 0; i < 10; i++) {
 					
@@ -621,44 +562,34 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 					textView[i].setText(temp);   //issue of repeated database hitting 
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 2: {
+			} else if (a == 2) {
 				int i1 = 2;
 				for (int i = 0; i < 10; i++) {
 
 					textView[i].setText(entry.getName(i1));   //issue of repeated database hitting
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 3: {
+			} else if (a == 3) {
 				int i1 = 3;
 				for (int i = 0; i < 10; i++) {
 
 					textView[i].setText(entry.getName(i1));  //issue of repeated database hitting
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 4: {
+			} else if (a == 4) {
 				int i1 = 4;
 				for (int i = 0; i < 10; i++) {
 					textView[i].setText(entry.getName(i1));  //issue of repeated database hitting
 
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 5: {
+			} else if (a == 5) {
 				int i1 = 5;
 				for (int i = 0; i < 10; i++) {
 					textView[i].setText(entry.getName(i1));   //issue of repeated database hitting
 					i1 = i1 + 5;
 
 				}
-				break;
-			}
 			}
 
 			// for(int i=0;i<3;i++)
@@ -704,9 +635,7 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 			}
 			int k = note.number();
 			String temp = "";
-			switch (a) {
-
-			case 1: {
+			if (a == 1) {
 				int i1 = 1;
 				for (int i = 0; i < 10; i++) {
 					
@@ -730,44 +659,34 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 					textView[i].setText(temp);   //issue of repeated database hitting 
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 2: {
+			} else if (a == 2) {
 				int i1 = 2;
 				for (int i = 0; i < 10; i++) {
 
 					textView[i].setText(entry.getName(i1));
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 3: {
+			} else if (a == 3) {
 				int i1 = 3;
 				for (int i = 0; i < 10; i++) {
 
 					textView[i].setText(entry.getName(i1));
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 4: {
+			} else if (a == 4) {
 				int i1 = 4;
 				for (int i = 0; i < 10; i++) {
 					textView[i].setText(entry.getName(i1));
 
 					i1 = i1 + 5;
 				}
-				break;
-			}
-			case 5: {
+			} else if (a == 5) {
 				int i1 = 5;
 				for (int i = 0; i < 10; i++) {
 					textView[i].setText(entry.getName(i1));
 					i1 = i1 + 5;
 
 				}
-				break;
-			}
 			}
 
 			// for(int i=0;i<3;i++)
@@ -805,52 +724,41 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 					e.printStackTrace();
 				}
 
-				switch (params[0]) {
-
-				case 1: {
+				Integer integer = params[0];
+				if (integer == 1) {
 					int i1 = 1;
 					for (int i = 0; i < 10; i++) {
 						textView[i].setText(entry.getName(i1));
 						i1 = i1 + 5;
 					}
-					break;
-				}
-				case 2: {
+				} else if (integer == 2) {
 					int i1 = 2;
 					for (int i = 0; i < 10; i++) {
 
 						textView[i].setText(entry.getName(i1));
 						i1 = i1 + 5;
 					}
-					break;
-				}
-				case 3: {
+				} else if (integer == 3) {
 					int i1 = 3;
 					for (int i = 0; i < 10; i++) {
 
 						textView[i].setText(entry.getName(i1));
 						i1 = i1 + 5;
 					}
-					break;
-				}
-				case 4: {
+				} else if (integer == 4) {
 					int i1 = 4;
 					for (int i = 0; i < 10; i++) {
 						textView[i].setText(entry.getName(i1));
 
 						i1 = i1 + 5;
 					}
-					break;
-				}
-				case 5: {
+				} else if (integer == 5) {
 					int i1 = 5;
 					for (int i = 0; i < 10; i++) {
 						textView[i].setText(entry.getName(i1));
 						i1 = i1 + 5;
 
 					}
-					break;
-				}
 				}
 
 				// for(int i=0;i<3;i++)
@@ -880,79 +788,46 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 				e.printStackTrace();
 			}
 			int b = (a - 1) + 5;
-			switch (v.getId()) {
-
-			case R.id.tv111: {
-
+			if (v.getId() == R.id.tv111) {
 				bread = entry.getName(a);
 				apples = entry.getHotness(a);
 				almonds = entry.getID(a);
-				break;
-			}
-
-			case R.id.tv112: {
-
+			} else if (v.getId() == R.id.tv112) {
 				bread = entry.getName(b + 1);
 				apples = entry.getHotness(b + 1);
 				almonds = entry.getID(b + 1);
-				break;
-			}
-			case R.id.tv113: {
-
+			} else if (v.getId() == R.id.tv113) {
 				bread = entry.getName(b + 6);
 				apples = entry.getHotness(b + 6);
 				almonds = entry.getID(b + 6);
-				break;
-			}
-			case R.id.tv114: {
-
+			} else if (v.getId() == R.id.tv114) {
 				bread = entry.getName(b + 11);
 				apples = entry.getHotness(b + 11);
 				almonds = entry.getID(b + 11);
-				break;
-			}
-			case R.id.tv115: {
-
+			} else if (v.getId() == R.id.tv115) {
 				bread = entry.getName(b + 16);
 				apples = entry.getHotness(b + 16);
 				almonds = entry.getID(b + 16);
-				break;
-			}
-			case R.id.tv116: {
-
+			} else if (v.getId() == R.id.tv116) {
 				bread = entry.getName(b + 21);
 				apples = entry.getHotness(b + 21);
 				almonds = entry.getID(b + 21);
-				break;
-			}
-			case R.id.tv117: {
-
+			} else if (v.getId() == R.id.tv117) {
 				bread = entry.getName(b + 26);
 				apples = entry.getHotness(b + 26);
 				almonds = entry.getID(b + 26);
-				break;
-			}
-			case R.id.tv118: {
-
+			} else if (v.getId() == R.id.tv118) {
 				bread = entry.getName(b + 31);
 				apples = entry.getHotness(b + 31);
 				almonds = entry.getID(b + 31);
-				break;
-			}
-			case R.id.tv119: {
-
+			} else if (v.getId() == R.id.tv119) {
 				bread = entry.getName(b + 36);
 				apples = entry.getHotness(b + 36);
 				almonds = entry.getID(b + 36);
-				break;
-			}
-			case R.id.tv1110: {
-
+			} else if (v.getId() == R.id.tv1110) {
 				bread = entry.getName(b + 41);
 				apples = entry.getHotness(b + 41);
 				almonds = entry.getID(b + 41);
-				break;
-			}
 			}
 			basket.putString("key", bread);
 			basket.putString("desc", apples);
@@ -1005,128 +880,75 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 			e.printStackTrace();
 		}
 
-		switch (v.getId()) {
-		case R.id.tv1: {
-
+		if (v.getId() == R.id.tv1) {
 			bread = entry.getName(1);
 			apples = entry.getHotness(1);
 			almonds = entry.getID(1);
-			break;
-		}
-
-		case R.id.tv2: {
-
+		} else if (v.getId() == R.id.tv2) {
 			bread = entry.getName(2);
 			apples = entry.getHotness(2);
 			almonds = entry.getID(2);
-			break;
-		}
-		case R.id.tv3: {
-
+		} else if (v.getId() == R.id.tv3) {
 			bread = entry.getName(3);
 			apples = entry.getHotness(3);
 			almonds = entry.getID(3);
-			break;
-		}
-		case R.id.tv4: {
-
+		} else if (v.getId() == R.id.tv4) {
 			bread = entry.getName(4);
 			apples = entry.getHotness(4);
 			almonds = entry.getID(4);
-			break;
-		}
-		case R.id.tv5: {
-
+		} else if (v.getId() == R.id.tv5) {
 			bread = entry.getName(5);
 			apples = entry.getHotness(5);
 			almonds = entry.getID(5);
-			break;
-		}
-		case R.id.tv6: {
-
+		} else if (v.getId() == R.id.tv6) {
 			bread = entry.getName(6);
 			apples = entry.getHotness(6);
 			almonds = entry.getID(6);
-			break;
-		}
-		case R.id.tv7: {
-
+		} else if (v.getId() == R.id.tv7) {
 			bread = entry.getName(7);
 			apples = entry.getHotness(7);
 			almonds = entry.getID(7);
-			break;
-		}
-		case R.id.tv8: {
-
+		} else if (v.getId() == R.id.tv8) {
 			bread = entry.getName(8);
 			apples = entry.getHotness(8);
 			almonds = entry.getID(8);
-			break;
-		}
-		case R.id.tv9: {
-
+		} else if (v.getId() == R.id.tv9) {
 			bread = entry.getName(9);
 			apples = entry.getHotness(9);
 			almonds = entry.getID(9);
-			break;
-		}
-		case R.id.tv10: {
-
+		} else if (v.getId() == R.id.tv10) {
 			bread = entry.getName(10);
 			apples = entry.getHotness(10);
 			almonds = entry.getID(10);
-			break;
-		}
-		case R.id.tv11: {
-
+		} else if (v.getId() == R.id.tv11) {
 			bread = entry.getName(11);
 			apples = entry.getHotness(11);
 			almonds = entry.getID(11);
-			break;
-		}
-		case R.id.tv12: {
-
+		} else if (v.getId() == R.id.tv12) {
 			bread = entry.getName(12);
 			apples = entry.getHotness(12);
 			almonds = entry.getID(12);
-			break;
-		}
-		case R.id.tv13: {
-
+		} else if (v.getId() == R.id.tv13) {
 			bread = entry.getName(13);
 			apples = entry.getHotness(13);
 			almonds = entry.getID(31);
-			break;
-		}
-		case R.id.tv14: {
-
+		} else if (v.getId() == R.id.tv14) {
 			bread = entry.getName(14);
 			apples = entry.getHotness(14);
 			almonds = entry.getID(14);
-			break;
-		}
-		case R.id.tv15: {
-
+		} else if (v.getId() == R.id.tv15) {
 			bread = entry.getName(15);
 			apples = entry.getHotness(15);
 			almonds = entry.getID(15);
-			break;
-		}
-		case R.id.tv16: {
-
+		} else if (v.getId() == R.id.tv16) {
 			bread = entry.getName(16);
 			apples = entry.getHotness(16);
 			almonds = entry.getID(16);
-			break;
-		}
-		case R.id.tv17: {
-
+		} else if (v.getId() == R.id.tv17) {
 			bread = entry.getName(17);
 			apples = entry.getHotness(17);
 			almonds = entry.getID(17);
-			break;
-		}
-		case R.id.tv18: {
+		} else if (v.getId() == R.id.tv18) {
 			try {
 				bread = entry.getName(18);
 				apples = entry.getHotness(18);
@@ -1138,233 +960,134 @@ public class TimeTableActivity extends SherlockFragmentActivity implements
 						Toast.LENGTH_LONG).show();
 				e.printStackTrace();
 			}
-			break;
-
-		}
-		case R.id.tv19: {
-
+		} else if (v.getId() == R.id.tv19) {
 			bread = entry.getName(19);
 			apples = entry.getHotness(19);
 			almonds = entry.getID(19);
-			break;
-		}
-		case R.id.tv20: {
-
+		} else if (v.getId() == R.id.tv20) {
 			bread = entry.getName(20);
 			apples = entry.getHotness(20);
 			almonds = entry.getID(20);
-			break;
-		}
-		case R.id.tv21: {
-
+		} else if (v.getId() == R.id.tv21) {
 			bread = entry.getName(21);
 			apples = entry.getHotness(21);
 			almonds = entry.getID(21);
-			break;
-		}
-		case R.id.tv22: {
-
+		} else if (v.getId() == R.id.tv22) {
 			bread = entry.getName(22);
 			apples = entry.getHotness(22);
 			almonds = entry.getID(22);
-			break;
-		}
-		case R.id.tv23: {
-
+		} else if (v.getId() == R.id.tv23) {
 			bread = entry.getName(23);
 			apples = entry.getHotness(23);
 			almonds = entry.getID(23);
-			break;
-		}
-		case R.id.tv24: {
-
+		} else if (v.getId() == R.id.tv24) {
 			bread = entry.getName(24);
 			apples = entry.getHotness(24);
 			almonds = entry.getID(24);
-			break;
-		}
-		case R.id.tv25: {
-
+		} else if (v.getId() == R.id.tv25) {
 			bread = entry.getName(25);
 			apples = entry.getHotness(25);
 			almonds = entry.getID(25);
-			break;
-		}
-		case R.id.tv26: {
-
+		} else if (v.getId() == R.id.tv26) {
 			bread = entry.getName(26);
 			apples = entry.getHotness(26);
 			almonds = entry.getID(26);
-			break;
-		}
-		case R.id.tv27: {
-
+		} else if (v.getId() == R.id.tv27) {
 			bread = entry.getName(27);
 			apples = entry.getHotness(27);
 			almonds = entry.getID(27);
-			break;
-		}
-
-		case R.id.tv28: {
-
+		} else if (v.getId() == R.id.tv28) {
 			bread = entry.getName(28);
 			apples = entry.getHotness(28);
 			almonds = entry.getID(28);
-			break;
-		}
-		case R.id.tv29: {
-
+		} else if (v.getId() == R.id.tv29) {
 			bread = entry.getName(29);
 			apples = entry.getHotness(29);
 			almonds = entry.getID(29);
-			break;
-		}
-		case R.id.tv30: {
-
+		} else if (v.getId() == R.id.tv30) {
 			bread = entry.getName(30);
 			apples = entry.getHotness(30);
 			almonds = entry.getID(30);
-			break;
-		}
-		case R.id.tv31: {
-
+		} else if (v.getId() == R.id.tv31) {
 			bread = entry.getName(31);
 			apples = entry.getHotness(31);
 			almonds = entry.getID(31);
-			break;
-		}
-		case R.id.tv32: {
-
+		} else if (v.getId() == R.id.tv32) {
 			bread = entry.getName(32);
 			apples = entry.getHotness(32);
 			almonds = entry.getID(32);
-			break;
-		}
-		case R.id.tv33: {
-
+		} else if (v.getId() == R.id.tv33) {
 			bread = entry.getName(33);
 			apples = entry.getHotness(33);
 			almonds = entry.getID(33);
-			break;
-		}
-		case R.id.tv34: {
-
+		} else if (v.getId() == R.id.tv34) {
 			bread = entry.getName(34);
 			apples = entry.getHotness(34);
 			almonds = entry.getID(34);
-			break;
-		}
-		case R.id.tv35: {
-
+		} else if (v.getId() == R.id.tv35) {
 			bread = entry.getName(35);
 			apples = entry.getHotness(35);
 			almonds = entry.getID(35);
-			break;
-		}
-		case R.id.tv36: {
-
+		} else if (v.getId() == R.id.tv36) {
 			bread = entry.getName(36);
 			apples = entry.getHotness(36);
 			almonds = entry.getID(36);
-			break;
-		}
-		case R.id.tv37: {
-
+		} else if (v.getId() == R.id.tv37) {
 			bread = entry.getName(37);
 			apples = entry.getHotness(37);
 			almonds = entry.getID(37);
-			break;
-		}
-		case R.id.tv38: {
-
+		} else if (v.getId() == R.id.tv38) {
 			bread = entry.getName(38);
 			apples = entry.getHotness(38);
 			almonds = entry.getID(38);
-			break;
-		}
-		case R.id.tv39: {
-
+		} else if (v.getId() == R.id.tv39) {
 			bread = entry.getName(39);
 			apples = entry.getHotness(39);
 			almonds = entry.getID(39);
-			break;
-		}
-		case R.id.tv40: {
-
+		} else if (v.getId() == R.id.tv40) {
 			bread = entry.getName(40);
 			apples = entry.getHotness(40);
 			almonds = entry.getID(40);
-			break;
-		}
-		case R.id.tv41: {
-
+		} else if (v.getId() == R.id.tv41) {
 			bread = entry.getName(41);
 			apples = entry.getHotness(41);
 			almonds = entry.getID(41);
-			break;
-		}
-		case R.id.tv42: {
-
+		} else if (v.getId() == R.id.tv42) {
 			bread = entry.getName(42);
 			apples = entry.getHotness(42);
 			almonds = entry.getID(42);
-			break;
-		}
-		case R.id.tv43: {
-
+		} else if (v.getId() == R.id.tv43) {
 			bread = entry.getName(43);
 			apples = entry.getHotness(43);
 			almonds = entry.getID(43);
-			break;
-		}
-		case R.id.tv44: {
-
+		} else if (v.getId() == R.id.tv44) {
 			bread = entry.getName(44);
 			apples = entry.getHotness(44);
 			almonds = entry.getID(44);
-			break;
-		}
-		case R.id.tv45: {
-
+		} else if (v.getId() == R.id.tv45) {
 			bread = entry.getName(45);
 			apples = entry.getHotness(45);
 			almonds = entry.getID(45);
-			break;
-		}
-		case R.id.tv46: {
-
+		} else if (v.getId() == R.id.tv46) {
 			bread = entry.getName(46);
 			apples = entry.getHotness(46);
 			almonds = entry.getID(46);
-			break;
-		}
-		case R.id.tv47: {
-
+		} else if (v.getId() == R.id.tv47) {
 			bread = entry.getName(47);
 			apples = entry.getHotness(47);
 			almonds = entry.getID(47);
-			break;
-		}
-		case R.id.tv48: {
-
+		} else if (v.getId() == R.id.tv48) {
 			bread = entry.getName(48);
 			apples = entry.getHotness(48);
 			almonds = entry.getID(48);
-			break;
-		}
-		case R.id.tv49: {
-
+		} else if (v.getId() == R.id.tv49) {
 			bread = entry.getName(49);
 			apples = entry.getHotness(49);
 			almonds = entry.getID(49);
-			break;
-		}
-		case R.id.tv50: {
+		} else if (v.getId() == R.id.tv50) {
 			bread = entry.getName(50);
 			apples = entry.getHotness(50);
 			almonds = entry.getID(50);
-			break;
-		}
 		}
 		/*basket.putString("key", bread);
 		basket.putString("desc", apples);

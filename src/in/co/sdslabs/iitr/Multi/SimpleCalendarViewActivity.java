@@ -370,7 +370,7 @@ public class SimpleCalendarViewActivity extends Activity implements
 							+ getMonthAsString(currentMonth) + "-" + yy + "-"
 							+ currentMonth);
 					todaytext = "" + String.valueOf(i)
-							+ String.format("%02d", currentMonth) + 13;
+							+ String.format("%02d", currentMonth) + 14;
 					int todayint = Integer.parseInt(todaytext);
 					// To get today's event
 					Datahelper myDbHelper = new Datahelper(
@@ -443,7 +443,7 @@ public class SimpleCalendarViewActivity extends Activity implements
 			try {
 				
 				//**changed jugaad
-				day = "" + daysinmonth + String.format("%02d", month+1) + 13;
+				day = "" + daysinmonth + String.format("%02d", month+1) + 14;
 				dayint1 = Integer.parseInt(day);
 				myDbHelperq.getInstance(getBaseContext());
 				String f = myDbHelperq.getEvent(dayint1);
@@ -497,7 +497,7 @@ public class SimpleCalendarViewActivity extends Activity implements
 			monthasint = day_color[4];
 
 			int mymonth2 = Integer.parseInt(monthasint);
-			if (year == 2013)
+			if (year == 2014)
 				eventsPerMonthMap = findNumberOfEventsPerMonth(year, mymonth2,
 						theday);
 			if (eventsPerMonthMap != 0) {
@@ -586,7 +586,7 @@ public class SimpleCalendarViewActivity extends Activity implements
 			myday = Integer.parseInt(day_color[0]);
 			myyear = Integer.parseInt(day_color[3]);
 
-			String day = "" + myday + String.format("%02d", mymonth) + 13;
+			String day = "" + myday + String.format("%02d", mymonth) + 14;
 			Log.d("CLICkedcell", day);
 			dayint = Integer.parseInt(day);
 			// String date_month_year =
@@ -604,9 +604,8 @@ public class SimpleCalendarViewActivity extends Activity implements
 						+ theyear;
 				String data = myDbHelper.getEvent(dayint);
 				if (data != null) {
-					// The database contained an additional star in every entry in events coloumn.. This line should be removed if next data collected does not contain that.
-					// First letter is converted to Upprcase also over here.
-					String lowerCase = (new StringBuilder(data)).substring(1);
+					// First letter is converted to Upprcase over here.
+					String lowerCase = (new StringBuilder(data)).toString();
 					Character c = lowerCase.charAt(0);
 					char f = Character.toUpperCase(c);
 					StringBuilder sb = new StringBuilder();

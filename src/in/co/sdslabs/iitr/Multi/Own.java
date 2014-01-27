@@ -65,8 +65,8 @@ public class Own extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		switch (v.getId()) {
-		case R.id.bDone: {
+		int id = v.getId();
+		if (id == R.id.bDone) {
 			HotOrNot entry;
 			entry = new HotOrNot(this);
 			try {
@@ -91,9 +91,8 @@ public class Own extends Activity implements OnClickListener {
 			Intent openStartingPoint = new Intent(
 					this,TimeTableActivity.class);
 			startActivity(openStartingPoint);
-			break;
-		}
-		case R.id.bAddSubject: {
+			
+		} else if (id == R.id.bAddSubject) {
 			String subjectString = subjectName.getText().toString();
 			subjectName.setText("");
 			if (!subjectString.equals("")) {
@@ -119,9 +118,8 @@ public class Own extends Activity implements OnClickListener {
 				Toast.makeText(this, "Enter Subject Name", Toast.LENGTH_LONG)
 						.show();
 			}
-			break;
+
 		}
 		}
 	}
 
-}

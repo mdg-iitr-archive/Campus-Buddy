@@ -193,9 +193,9 @@ public class Datahelper extends SQLiteOpenHelper{
    @Override
   	public void onCreate(SQLiteDatabase db) {
   		// TODO Auto-generated method stub
-  		//db.execSQL("CREATE TABLE " + DATABASE_TABLE + " (" + KEY_DATE+ " INTEGER PRIMARY KEY, " + KEY_DESCRIPTION + " TEXT);");
+  		db.execSQL("CREATE TABLE " + DATABASE_TABLE + " (" + KEY_DATE+ " INTEGER PRIMARY KEY, " + KEY_DESCRIPTION + " TEXT);");
   		
-      //   Log.d("create tableon",myDb.getPath() ) ;
+//        Log.d("create tableon",myDb.getPath() ) ;
   	}
 
   	@Override

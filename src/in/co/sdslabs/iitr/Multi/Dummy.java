@@ -251,8 +251,8 @@ public class Dummy extends Activity implements OnClickListener,
 			}
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.bSaveNote: {
+		int id = v.getId();
+		if (id == R.id.bSaveNote) {
 			Notes note = new Notes(this);
 			try {
 				note.open();
@@ -263,9 +263,8 @@ public class Dummy extends Activity implements OnClickListener,
 			note.updateEntry(i1, note.getName(i1), notes.getText().toString(),note.getAttend(i1),note.getDesc(i1));
 			note.close();
 			Toast.makeText(this, "Note is Saved", Toast.LENGTH_LONG).show();
-			break;
-		}
-		case R.id.bOneTimeAlarm: {
+			
+		} else if ( id == R.id.bOneTimeAlarm) {
 			int chour, cminute, cyear, cmonth, cday;
 			Calendar objCalendar = Calendar.getInstance();
 			cmonth = datePicker.getMonth();
@@ -290,9 +289,8 @@ public class Dummy extends Activity implements OnClickListener,
 			am.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(),
 					pendingIntent);
 			Toast.makeText(this, "Alarm is set", Toast.LENGTH_LONG).show();
-			break;
-		}
-		case R.id.bStopAlarm: {
+			
+		} else if (id==R.id.bStopAlarm) {
 			Intent intent = new Intent(
 					"com.sds.timetablesds.MainActivity.ALARMRECEIVERACTIVITY");
 			PendingIntent pendingIntent = PendingIntent.getActivity(this, 2,
@@ -301,26 +299,17 @@ public class Dummy extends Activity implements OnClickListener,
 			am.cancel(pendingIntent);
 			Toast.makeText(this, "stop Alarm", Toast.LENGTH_LONG).show();
 
-			break;
 		}
-		case R.id.saveChange: {
+		else if (id==R.id.saveChange) {
 
 			//Toast.makeText(this, "reached", Toast.LENGTH_LONG).show();
 			cheery = "";
-			switch (radioGroup.getCheckedRadioButtonId()) {
-			case R.id.radio0: {
+			if (radioGroup.getCheckedRadioButtonId() == R.id.radio0) {
 				cheery = "L";
-				break;
-			}
-			case R.id.radio1: {
+			} else if (radioGroup.getCheckedRadioButtonId() == R.id.radio1) {
 				cheery = "T";
-				break;
-			}
-			case R.id.radio2: {
+			} else if (radioGroup.getCheckedRadioButtonId() == R.id.radio2) {
 				cheery = "P";
-				break;
-			}
-
 			}
 			//Toast.makeText(this,"whatcame"+radioGroup1.getCheckedRadioButtonId() ,Toast.LENGTH_LONG).show();
 			int flag6 = 0;
@@ -411,10 +400,8 @@ public class Dummy extends Activity implements OnClickListener,
 			{
 				Toast.makeText(this, "Select either from radiobuttons or write in textfield", Toast.LENGTH_LONG).show();
 			}
-			break;
-		}
-
-		case R.id.button1: {
+			
+		} else if (id == R.id.button1) {
 			radioGroup.setVisibility(View.VISIBLE);
 			radioGroup1.setVisibility(View.VISIBLE);
 			Notes note = new Notes(this);
@@ -470,26 +457,25 @@ public class Dummy extends Activity implements OnClickListener,
 			prof.setVisibility(View.VISIBLE);
 			place.setVisibility(View.VISIBLE);
 			saveChange.setVisibility(View.VISIBLE);
-			break;
-		}
-		case R.id.bAlarm: {
+			
+		} else if (id ==  R.id.bAlarm) {
 			datePicker.setVisibility(View.VISIBLE);
 			timePicker.setVisibility(View.VISIBLE);
 			linearLayout.setVisibility(View.VISIBLE);
-			break;
+			
 		}
 		/*case R.id.b_other_batch: {
 			//textView1.setVisibility(View.VISIBLE);
 			break;
 		}
 */
-		case R.id.bDone: {
+		
+		else if (id == R.id.bDone) {
 			if (flag == 1) {
 			}
 			finish();
-			break;
 		}
-		}
+		
 	}
 
 	private static String pad(int c) {

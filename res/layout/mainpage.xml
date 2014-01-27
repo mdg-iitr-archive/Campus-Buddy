@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:autoLink="email"
             android:textColor="#000000"
-            android:text="Contact us at mdgiitr@gmail.com"
+            android:text="Contact us at sdsmobilelabs@gmail.com"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
     <LinearLayout

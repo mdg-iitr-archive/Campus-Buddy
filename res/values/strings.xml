@@ -129,5 +129,7 @@
     <string name="ce_242">No Notes Available</string>
     <string name="es_201">No Notes Available</string>
     <string name="bm_201">No Notes Available</string>
+    
+    <color name="brown">#74300e</color>
 
 </resources>
