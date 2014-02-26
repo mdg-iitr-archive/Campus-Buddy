@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.co.sdslabs.iitr.Multi"
-    android:versionCode="4"
-    android:versionName="1.1.1"
+    package="mdg.iitr.campusbuddy"
+    android:versionCode="2"
+    android:versionName="1.0.1"
     android:installLocation="auto" >
 
     <uses-sdk
@@ -24,19 +24,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainPage"
+            android:name="mdg.iitr.campusbuddy.MainPage"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
             <!-- android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" --> 
             <intent-filter>
                 <action android:name="in.co.sdslabs.iitr.Multi.MAINPAGE" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".TabPage"
+            android:name="mdg.iitr.campusbuddy.TabPage"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -47,7 +46,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SimpleCalendarViewActivity"
+            android:name="mdg.iitr.campusbuddy.SimpleCalendarViewActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
@@ -58,7 +57,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Table"
+            android:name="mdg.iitr.campusbuddy.Table"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
@@ -68,7 +67,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="in.co.sdslabs.iitr.Multi.MainActivity"
+            android:name="mdg.iitr.campusbuddy.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask" >
             <intent-filter>
@@ -78,7 +77,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="in.co.sdslabs.iitr.Multi.SecondActivity"
+            android:name="mdg.iitr.campusbuddy.SecondActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="test.pkr.namespace.SECOND" />
@@ -87,7 +86,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Instructions"
+            android:name="mdg.iitr.campusbuddy.Instructions"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
@@ -97,7 +96,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Aboutus"
+            android:name="mdg.iitr.campusbuddy.Aboutus"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
@@ -107,10 +106,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name="in.co.sdslabs.iitr.Multi.ScheduleService" />
-        <service android:name="in.co.sdslabs.iitr.Multi.NotifyService" />
+        <service android:name="mdg.iitr.campusbuddy.ScheduleService" />
+        <service android:name="mdg.iitr.campusbuddy.NotifyService" />
 <activity
-            android:name=".Own"
+            android:name="mdg.iitr.campusbuddy.Own"
             android:label="@string/app_name" 
             android:theme="@style/Theme.Sherlock.Light">
             <intent-filter>
@@ -121,7 +120,7 @@
         </activity>
        	
 		           <activity
-            android:name=".Dummy"
+            android:name="mdg.iitr.campusbuddy.Dummy"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
@@ -132,7 +131,7 @@
         </activity>
         
            <activity
-            android:name=".TimeTableActivity"
+            android:name="mdg.iitr.campusbuddy.TimeTableActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Sherlock.Light"
              >
@@ -146,7 +145,7 @@
         
         
         <activity
-            android:name=".AlarmReceiverActvity"
+            android:name="mdg.iitr.campusbuddy.AlarmReceiverActvity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
@@ -156,7 +155,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Seenote"
+            android:name="mdg.iitr.campusbuddy.Seenote"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
@@ -166,7 +165,7 @@
             </intent-filter>
         </activity>
             <activity
-            android:name=".Attendance"
+            android:name="mdg.iitr.campusbuddy.Attendance"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>

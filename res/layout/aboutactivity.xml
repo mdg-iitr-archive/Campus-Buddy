@@ -17,12 +17,12 @@
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
-            <TextView
+            <!-- <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="all"
                 android:text="http://www.facebook.com/mdgiitr\n" />
-
+ -->
              <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -32,81 +32,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Developers\n\" 
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:gravity="center_horizontal"
+                    android:text="This application has been designed by the Members of Mobile development group as an effort to simplify campus life through use of smartphone technology. If you find our work useful don't forget to rate us on the play store.\n\" 
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
             </LinearLayout>
             
-<!--             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Shikhar Shrivastav \n\t CS IDD 5th year\n" />
-            </LinearLayout>           
- -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Baquari Mustafa Anees \n\t EE 4th year\n" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mohit Tibrewal \n\t EE 4th year\n" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Prakhar Gupta \n\t CSI 4th year\n" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sumit Badwal \n\t CSE 4th year\n" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sandeep Singh Sandha\n\t CSE 4th year\n" />
-            </LinearLayout>
             
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -117,46 +47,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Abhinav Jain \n\t CSI 4thrd year\n" />
+                    android:gravity="center_horizontal"
+                    android:linksClickable="true"
+                    android:text="You can write to us at\n\ sdsmobilelabs@gmail.com\n\ for any suggestions, feedbacks and bug reports.\n\ You may follow us on facebook at \n\ www.facebook.com/mdgiitr\n\ for updates\n\" 
+                    />
             </LinearLayout>
-            
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ankit Jain\n\t Civil 3rd year\n" />
-            </LinearLayout>
-            
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    
-                    android:text="Data Collectors\n\" 
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
-            </LinearLayout>          
-            
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Divij Bindlish\n\t EE 1st year\n" />
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

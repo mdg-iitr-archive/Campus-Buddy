@@ -161,7 +161,7 @@
                             android:layout_height="fill_parent"
                             android:orientation="vertical" >
 
-                            <in.co.sdslabs.iitr.zoom.ImageZoomView
+                            <mdg.iitr.campusbuddy.zoom.ImageZoomView
                                 xmlns:android="http://schemas.android.com/apk/res/android"
                                 android:id="@+id/mapView"
                                 android:layout_width="fill_parent"

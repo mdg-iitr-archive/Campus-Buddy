@@ -1,6 +1,6 @@
 package mdg.iitr.splash;
 
-import in.co.sdslabs.iitr.Multi.R;
+import mdg.iitr.campusbuddy.R;
 import android.os.Bundle;
 import android.animation.AnimatorSet;
 import android.app.Activity;
@@ -90,14 +90,13 @@ public class StandardSplash extends Activity {
 				// TODO Auto-generated method stub
 				try {
 					sleep(5000);
-					if (skipped) {
+					if (!skipped) {
 						startActivity(yourIntent);
 						finish();
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
-				} finally {
 				}
 				
 			}
